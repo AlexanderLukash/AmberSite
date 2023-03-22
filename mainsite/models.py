@@ -1,5 +1,6 @@
 from datetime import date
 
+from django.contrib.auth import get_user_model
 from django.contrib.contenttypes.fields import GenericRelation
 from django.db import models
 from django.db.models import Q
@@ -20,8 +21,11 @@ class NewsManager(models.Manager):
 class News(models.Model):
     title = models.CharField("Заголовок", max_length=100)
     description = models.TextField("Описання", max_length=335)
+    banner = models.ImageField("Банер", upload_to="news/banners/", null=True)
+    image = models.ImageField("Зображення", upload_to="news/images/", null=True, blank=True)
     text = models.TextField("Зміст")
     premiere = models.DateField("Дата публікації", default=date.today)
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True)
     url = models.SlugField(max_length=255, unique=True, default="Введіть унікальний аудентифікатор")
     hit_count_generic = GenericRelation(HitCount, object_id_field='object_pk',
                                         related_query_name='hit_count_generic_relation')

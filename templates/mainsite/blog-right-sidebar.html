@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load hitcount_tags %}
 <html lang="zxx">
 <head>
 
@@ -202,25 +203,24 @@
 						<!-- Post -->
 						<div class="post">
 							<figure class="post__thumb">
-								<a href="blog-post.html"><img src="assets/img/samples/blog-post-img-1.jpg" alt=""></a>
+								<a href="{{ news.get_absolute_url }}"><img src="{{ news.banner.url }}" alt=""></a>
 							</figure>
 							<div class="post__body box">
 								<header class="post__header">
 									<ul class="post__tax list-unstyled">
-										<li class="post__tax-item"><a href="#">Basics</a></li>
 									</ul>
-									<h2 class="post__title"><a href="blog-post.html">{{ news.title }}</a></h2>
+									<h2 class="post__title"><a href="{{ news.get_absolute_url }}">{{ news.title }}</a></h2>
 									<ul class="post__meta list-unstyled">
 										<li class="post__meta-item post__meta-item--date"><a href="blog-post.html">{{ news.premiere }}</a></li>
-										<li class="post__meta-item post__meta-item--author"><a href="#">Dan Fisher</a></li>
-										<li class="post__meta-item post__meta-item--comments"><a href="blog-post.html#comments">3 Comments</a></li>
+										<li class="post__meta-item post__meta-item--author"><a href="#">{{ news.author }}</a></li>
+										<li class="post__meta-item post__meta-item--comments"><a href="blog-post.html#comments">{% get_hit_count for news %}</a></li>
 									</ul>
 								</header>
 								<div class="post__excerpt">
-									Aenean turpis dolor, ornare sed imperd id, pulvinar eu massa. Nulla accumsan lorem convallis tellus faucibus, eu laoreet. Sed vitae purus.  Aenean euismod turpis sem, quis vehicula diam lacinia a. Nam ultrices.
+                                    {{ news.description }}
 								</div>
 								<footer class="post__footer">
-									<a href="blog-post.html" class="btn btn-outline-secondary">Read More</a>
+									<a href="{{ news.get_absolute_url }}" class="btn btn-outline-secondary">Детальніше</a>
 								</footer>
 							</div>
 						</div>

@@ -6567,7 +6567,7 @@ Images
 }
 
 .post__meta-item > a {
-  color: #717171;
+  color: #FFFFFF;
 }
 
 .post__meta-item > a:hover {
@@ -6583,7 +6583,7 @@ Images
 }
 
 .post__meta-item--comments::before {
-  content: "\f11a";
+  content: "\f133";
 }
 
 .post__excerpt + .post__footer,

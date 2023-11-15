@@ -1,4 +1,7 @@
+antiorm==1.2.1
 asgiref==3.7.2
+db==0.1.1
+db-sqlite3==0.0.1
 Django==4.2.7
 django-ckeditor==6.7.0
 django-etc==1.4.0

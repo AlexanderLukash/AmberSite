@@ -1,6 +1,7 @@
 # AmberSite
 #### Website for my Discord server. News, blogs, events.
 ###### Still in development.
+###### Design by [dan_fisher](https://dan-fisher.com/)
 
 
 <img src="/Thumbnail.jpg">
